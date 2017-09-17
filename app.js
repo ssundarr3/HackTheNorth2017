@@ -102,11 +102,12 @@ function init(url, event_score) {
 }
 
 // init("https://staticdelivery.nexusmods.com/mods/110/images/thumbnails/17970-1-1338505684.jpg", 0.5);
-init("./demo-image.jpg", 0.2);
 
 app.get('/', (req, res) => {
   console.log(req);
-  res.status(200).send("hello there");
+  var res = init("./demo-image.jpg", 0.2);
+
+  res.status(200).send("hello there" + JSON.stringify(res, undefined, 2));
   return;
   var x = init(req.body);
 });
